@@ -41,7 +41,9 @@ export default function Projects() {
             This is a page all about projects.
         </p>
         <ProjectPost projectName = "Spruce Plantation" projectDetail = "400 trees in South Wicklow" imagePath = "./images/spruce.png" targetUrl = "google.com" />
+        <br />
         <ProjectPost projectName = "Beautiful Decay" projectDetail = "Snapshots of post-soviet nostalgia" imagePath = "./images/decay.png" targetUrl = "google.com" />
+
 
         <Socials />
         </div>
