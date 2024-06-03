@@ -48,6 +48,7 @@ export function Header() {
 export function Socials() {
   return(
     <>
+      <br />
       <h1> Socials: </h1>
       <li>
         <a href="https://github.com/yablochko8/">
