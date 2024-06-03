@@ -1,6 +1,6 @@
 import { Header, Socials } from "./_index";
 
-export default function About() {
+export default function Games() {
     return (
         <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
         <Header />
