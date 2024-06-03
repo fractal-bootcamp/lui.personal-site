@@ -7,51 +7,53 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-function Header() {
+function HeaderButton({ target, title }: any ){
+  return(
+    <a href={"/" + target}>
+      <button className="bg-blue-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded">
+        {title}
+      </button>
+    </a>
+  )
+}
+
+export function Header() {
   return(
     <>
-    <h1 className="text-3xl font-bold underline">
-    lui's website
-  </h1>
+  <a href="./">
+    <h1 className="text-3xl font-bold">
+      lui's website
+    </h1>
+  </a>
+  <HeaderButton target="about" title="about me" />
+  <HeaderButton target="projects" title="projects" />
+  <HeaderButton target="games" title="games" />
+  <HeaderButton target="words" title="words" />
+  </>
+  )
+  
+}
 
-  <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-    <ul>
-      <li>
-        <a
-          href="/about"
-          rel="noreferrer"
-        >
-          about me
-        </a>
-      </li>
-      <li>
-        <a
-          href="/projects"
-          rel="noreferrer"
-        >
-          projects
-        </a>
-      </li>
-      <li>
-        <a
-          href="/games"
-          rel="noreferrer"
-        >
-          games
-        </a>
-      </li>
 
+export function Socials() {
+  return(
+    <>
+      <h1> Socials: </h1>
       <li>
-        <a
-          href="/words"
-          rel="noreferrer"
-        >
-          words
+        <a href="https://github.com/yablochko8/">
+          Github
         </a>
       </li>
-
-    </ul>
-  </div>
+      <li>
+      <a href="https://www.linkedin.com/in/luismyth/">
+        LinkedIn
+      </a>
+      </li>
+      <li>
+      <a href="https://x.com/yablochko/">
+        Twitter / x dot com
+      </a>
+      </li>
   </>
   )
   
@@ -60,7 +62,12 @@ function Header() {
 export default function Index() {
   return (
     <>
-    <Header />
+      <Header />
+      <p>
+        Welcome to my website.
+      </p>
+
+      <Socials />
     </>
   );
 }

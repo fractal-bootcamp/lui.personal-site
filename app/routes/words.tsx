@@ -1,12 +1,14 @@
+import { Header, Socials } from "./_index";
 
-export default function About() {
+export default function Words() {
     return (
         <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-    
-        <h2> About </h2>
+        <Header />
+        <h2> Words </h2>
         <p>
-            Hello testing here.
+            This is my writing.
         </p>
+        <Socials />
         </div>
     );
   }
