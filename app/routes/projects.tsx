@@ -2,7 +2,7 @@ import { Header, Socials } from "./_index";
 
 export default function About() {
     return (
-        <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+        <div>
         <Header />
         <h2>Projects</h2>
         <p>

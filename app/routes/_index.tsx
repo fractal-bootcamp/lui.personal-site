@@ -7,10 +7,17 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-function HeaderButton({ target, title }: any ){
+function HeaderButton({ target, title, importance = "secondary" }: any ){
+  let buttonClass = ""
+  if(importance === "primary") {
+    buttonClass = "bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded"
+  }
+  else if(importance === "secondary") {
+    buttonClass = "bg-blue-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded"
+  }
   return(
     <a href={"/" + target}>
-      <button className="bg-blue-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded">
+      <button className={buttonClass}>
         {title}
       </button>
     </a>
@@ -22,13 +29,16 @@ export function Header() {
     <>
   <a href="./">
     <h1 className="text-3xl font-bold">
-      lui's website
+      luiiiiii
     </h1>
   </a>
+  <div className="flex space-x-4 ...">
+  <HeaderButton target="./" title="my homepage" importance="primary" />
   <HeaderButton target="about" title="about me" />
   <HeaderButton target="projects" title="projects" />
   <HeaderButton target="games" title="games" />
   <HeaderButton target="words" title="words" />
+  </div>
   </>
   )
   
