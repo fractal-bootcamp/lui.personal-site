@@ -18,7 +18,7 @@ const DevNotesBadge = ({ title, targetUrl, avatarUrl }: DevNotesBadgeProps) => {
     )
 }
 
-export default function Words() {
+export default function DevNotes() {
     return (
         <div>
         <Header />
