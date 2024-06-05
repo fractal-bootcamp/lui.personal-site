@@ -4,31 +4,33 @@ export default function About() {
     return (
         <div>
         <Header />
-        <h2> About </h2>
-        
-        <img src="./images/avatar.png" width="200" />
+        <div className = "p-5">
 
-        <p>
-            Hi! My name is Lúí - an Irish spelling of Louie with the same pronunciation - I'm happy for it to be written simply as Lui.
+            <h2> About </h2>
+            
+            <img src="./images/avatar.png" width="200" />
 
-            I live in a smallish port town called Dún Laoghaire just south of Dublin, Ireland, previously lived in London for years, plus briefly in Brussels and Moscow.
+            <p>
+                Hi! My name is Lúí - an Irish spelling of Louie with the same pronunciation - I'm happy for it to be written simply as Lui.
 
-            I'm in NYC for June, July, August for Fractal Bootcamp.
+                I live in a smallish port town called Dún Laoghaire just south of Dublin, Ireland, previously lived in London for years, plus briefly in Brussels and Moscow.
 
-            I've worked in product management in the AI art space.
+                I'm in NYC for June, July, August for Fractal Bootcamp.
 
-            I love books, art, trees, games, languages, history.
+                I've worked in product management in the AI art space.
 
-            Using the skills from the bootcamp I'm going to start/cofound/join a startup in one of these areas.
+                I love books, art, trees, games, languages, history.
 
-        </p>
-        <br />
-        <p>
-            I like trees, such as this elm:
-        </p>
+                Using the skills from the bootcamp I'm going to start/cofound/join a startup in one of these areas.
 
-        <img src="./images/elm.jpg" width="200" />
+            </p>
+            <br />
+            <p>
+                I like trees, such as this elm:
+            </p>
 
+            <img src="./images/elm.jpg" width="200" />
+        </div>
         <Socials />
         </div>
     );
