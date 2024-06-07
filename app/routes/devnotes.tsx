@@ -23,7 +23,7 @@ export default function DevNotes() {
         <div>
         <Header />
         <div className="mx-5 mt-10">
-            Very rough notes, all in Google Docs for now:
+            Rough notes, all in Google Docs for now:
         </div>
         <div className="flex flex-row">
             <DevNotesBadge
