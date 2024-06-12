@@ -27,14 +27,10 @@ function HeaderButton({ target, title, importance = "secondary" }: any ){
 export function Header() {
   return(
     <>
-  <a href="./">
-    <h1 className="text-3xl font-bold p-5">
-      luiiiiii
-    </h1>
-  </a>
+  <br />
   <div className="flex space-x-4 px-5">
-  <HeaderButton target="./" title="my homepage" importance="primary" />
-  <HeaderButton target="about" title="about me" />
+  <HeaderButton target="./" title="homepage" importance="primary" />
+  <HeaderButton target="about" title="about" />
   <HeaderButton target="projects" title="projects" />
   <HeaderButton target="games" title="games" />
   <HeaderButton target="words" title="words" />

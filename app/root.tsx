@@ -23,7 +23,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <div className="mx-auto max-w-screen-lg">
+        <div className="flex flex-col justify-start items-center min-h-screen mx-auto max-w-screen-lg">
           {children}
         </div>
         <ScrollRestoration />

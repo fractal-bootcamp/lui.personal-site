@@ -345,7 +345,7 @@ function TicTacToe() {
   
     return (
       <>
-        <div className="flex flex-col justify-center items-center p-16 mx-auto">
+        <div className="flex flex-col items-center p-16 mx-auto">
         <NextPlayerMessage xIsNext={xIsNext} />
 
         <ShowBoard  board={board} setBoard= {setBoard} xIsNext={xIsNext} setXIsNext={setXIsNext}/>
@@ -361,8 +361,9 @@ function TicTacToe() {
 
   export default function Games() {
     return (
-        <div>
+        <>
+        <h1>TicTacToe</h1>
         <TicTacToe />
-        </div>
+        </>
     );
   }
