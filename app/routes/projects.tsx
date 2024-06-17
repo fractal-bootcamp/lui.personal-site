@@ -1,4 +1,6 @@
-import { Header, Socials } from "./_index";
+import { Header } from "./_index";
+
+import { Socials } from "../components/socials"
 
 const ProjectPost = ( props : any ) => {
     const { projectName, projectDetail, imagePath, targetUrl } = props;
@@ -32,7 +34,7 @@ const ProjectPost = ( props : any ) => {
 export default function Projects() {
     return (
         <div>
-        <Header />
+        <Header selected="projects"/>
         <div className = "p-5">
             <h2>Projects</h2>
             <p>

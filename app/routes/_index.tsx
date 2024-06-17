@@ -1,5 +1,9 @@
 import type { MetaFunction } from "@remix-run/node";
 
+import {motion} from "framer-motion"
+
+import { Socials } from "../components/socials"
+
 export const meta: MetaFunction = () => {
   return [
     { title: "lui's homepage" },
@@ -7,70 +11,61 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-function HeaderButton({ target, title, importance = "secondary" }: any ){
-  let buttonClass = ""
-  if(importance === "primary") {
-    buttonClass = "bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded"
-  }
-  else if(importance === "secondary") {
-    buttonClass = "bg-blue-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded"
-  }
+function HeaderButton({ target, title, selected = "" }: any ){
+  const conditionalStyles = (target === selected) ?
+   "bg-emerald-200 text-emerald-900" : 
+   "bg-emerald-500 text-white"
+  
+  const buttonClass = `${conditionalStyles} 
+    border-emerald-600
+    hover:bg-yellow-200 
+    hover:text-yellow-950
+    py-1
+    md:py-2
+    px-2
+    md:px-4
+
+    text-xs
+    sm:text-base
+
+    rounded`
   return(
     <a href={"/" + target}>
-      <button className={buttonClass}>
+      <motion.button 
+      className={buttonClass}
+      whileHover = {{ scale: 1.05 }}
+      whileTap = {{ scale: 0.90 }}
+    
+      >
         {title}
-      </button>
+      </motion.button>
     </a>
   )
 }
 
-export function Header() {
+export function Header({ selected = "" }:{selected: string}) {
   return(
     <>
-  <br />
-  <div className="flex space-x-4 px-5">
-  <HeaderButton target="./" title="homepage" importance="primary" />
-  <HeaderButton target="about" title="about" />
-  <HeaderButton target="projects" title="projects" />
-  <HeaderButton target="games" title="games" />
-  <HeaderButton target="words" title="words" />
-  <HeaderButton target="devnotes" title="dev notes" />
-  </div>
-  </>
+      <div className="flex flex-row p-1 justify-center flex-wrap items-center space-x-1 sm:space-x-2">
+      <HeaderButton target="./" title="🏠" selected={selected} />
+      <HeaderButton target="about" title="about" selected={selected}/>
+      <HeaderButton target="projects" title="projects" selected={selected}/>
+      <HeaderButton target="games" title="games" selected={selected}/>
+      <HeaderButton target="words" title="words" selected={selected}/>
+      <HeaderButton target="devnotes" title="dev" selected={selected}/>
+      </div>
+    </>
   )
   
 }
 
 
-export function Socials() {
-  return(
-    <div className="m-5">
-      <br />
-      <h1> Socials: </h1>
-      <li>
-        <a href="https://github.com/yablochko8/">
-          Github
-        </a>
-      </li>
-      <li>
-      <a href="https://www.linkedin.com/in/luismyth/">
-        LinkedIn
-      </a>
-      </li>
-      <li>
-      <a href="https://x.com/yablochko/">
-        Twitter / x dot com
-      </a>
-      </li>
-  </div>
-  )
-  
-}
+
 
 export default function Index() {
   return (
     <>
-      <Header />
+      <Header selected="./"/>
       <div className = "p-5">
 
         <p>

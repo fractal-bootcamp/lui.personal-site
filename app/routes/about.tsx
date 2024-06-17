@@ -1,14 +1,17 @@
-import { Header, Socials } from "./_index";
+import { Header } from "./_index";
+
+import { Socials } from "../components/socials"
+
 
 export default function About() {
     return (
         <div>
-        <Header />
+        <Header selected="about"/>
         <div className = "p-5">
 
             <h2> About </h2>
             
-            <img src="./images/avatar.png" width="200" />
+            <img src="./images/avatar.png" width="200" className="rounded-lg" />
 
             <p>
                 Hi! My name is Lúí - an Irish spelling of Louie with the same pronunciation - I'm happy for it to be written simply as Lui.
@@ -29,7 +32,7 @@ export default function About() {
                 I like trees, such as this elm:
             </p>
 
-            <img src="./images/elm.jpg" width="200" />
+            <img src="./images/elm.jpg" width="200" className="rounded-lg" />
         </div>
         <Socials />
         </div>

@@ -1,4 +1,6 @@
-import { Header, Socials } from "./_index";
+import { Header } from "./_index";
+
+import { Socials } from "../components/socials"
 
 import { useState } from 'react'
 
@@ -22,7 +24,7 @@ const exampleBoard = [
 
 type WinState = {
   outcome: "WIN" | "TIE" | null;
-  winner: "X" | "O" | null;
+  winner: string | null;
 }
 
 type BoardType = string[][]
@@ -40,8 +42,8 @@ const getUpdatedBoard = (board: BoardType, rowNum: number, colNum: number, xIsNe
   return newBoard
 }
 
-const checkRow = (row: string[]) => {
-  const winner = row.reduce((prev: string | null, curr: string) => {
+const checkRow = (row: string[]) : WinState => {
+  const winner = row.reduce< string | null >((prev: string | null, curr: string) => {
     if (prev === "") {
       return null
     }
@@ -49,12 +51,14 @@ const checkRow = (row: string[]) => {
       return curr
     }
     return null
-  }
-)
+  }, row[0] || null)
+
 // array.reduce(previous, current) will cycle through
 // all the items in an array and run the function against
 //
-return {outcome: !!winner ? "WIN" : null,  winner: winner}
+return {
+  outcome: !!winner ? "WIN" : null,
+  winner: winner}
 // !! checks if something exists
 // ? is ternary operator, gives first result if True, second if False
 
@@ -71,7 +75,7 @@ const getCol = (board: typeof exampleBoard, colIndex: number) => {
 
 }
 
-const getDiagonal = (board: typeof exampleBoard, startingPoint: "nw" | "ne") => {
+const getDiagonal = (board: typeof exampleBoard, startingPoint: "nw" | "ne") : string[] => {
   
   if (startingPoint === "nw"){
     const diagonalArray = []
@@ -89,7 +93,10 @@ const getDiagonal = (board: typeof exampleBoard, startingPoint: "nw" | "ne") => 
     }
     return diagonalArray
   }
-  else console.log("ERROR: irregular diagonal startPoint value passed")
+  else {
+    console.log("ERROR: irregular diagonal startPoint value passed")
+    return [""]
+  }
 }
 
 // export const checkWinCondition = (b: typeof board) : WinState => {
@@ -203,12 +210,6 @@ const ShowTile = ({rowNum, colNum, board, setBoard, xIsNext, setXIsNext }: {rowN
 const ShowBoard = ({ board, setBoard, xIsNext, setXIsNext } : { board: BoardType, setBoard: Function, xIsNext: boolean, setXIsNext: Function} ) => {
 
   const sharedRowClassName = 'flex flex-row'
-
-  const testClick = () => {
-    console.log("testClick")
-    const testThing = setBoard(getUpdatedBoard(board, 2, 2))
-    console.log("testThing", testThing)
-  }
 
   return (
     <>

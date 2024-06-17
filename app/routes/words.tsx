@@ -1,9 +1,12 @@
-import { Header, Socials } from "./_index";
+import { Header } from "./_index";
+
+import { Socials } from "../components/socials"
+
 
 export default function Words() {
     return (
         <div>
-        <Header />
+        <Header selected="words"/>
         <div className = "p-5">
 
             <h2> Words </h2>
