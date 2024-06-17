@@ -8,13 +8,21 @@ export const meta: MetaFunction = () => {
 };
 
 function HeaderButton({ target, title, selected = "" }: any ){
-  const conditionalStyles = (target === selected) ? "bg-emerald-200 text-emerald-900" : "bg-emerald-500 text-white"
+  const conditionalStyles = (target === selected) ?
+   "bg-emerald-200 text-emerald-900 sm:border-2" : 
+   "bg-emerald-500 text-white"
   
   const buttonClass = `${conditionalStyles} 
-    hover:bg-yellow-500 
-    py-2 
-    px-4 
-    m-1 
+    border-emerald-600
+    hover:bg-fuchsia-500 
+    py-1
+    md:py-2
+    px-2
+    md:px-4
+
+    text-xs
+    sm:text-base
+
     rounded`
   return(
     <a href={"/" + target}>
@@ -28,13 +36,13 @@ function HeaderButton({ target, title, selected = "" }: any ){
 export function Header({ selected = "" }:{selected: string}) {
   return(
     <>
-      <div className="flex flex-row p-1 justify-center">
+      <div className="flex flex-row p-1 justify-center flex-wrap items-center space-x-1 sm:space-x-2">
       <HeaderButton target="./" title="🏠" selected={selected} />
       <HeaderButton target="about" title="about" selected={selected}/>
       <HeaderButton target="projects" title="projects" selected={selected}/>
       <HeaderButton target="games" title="games" selected={selected}/>
       <HeaderButton target="words" title="words" selected={selected}/>
-      <HeaderButton target="devnotes" title="dev notes" selected={selected}/>
+      <HeaderButton target="devnotes" title="dev" selected={selected}/>
       </div>
     </>
   )
