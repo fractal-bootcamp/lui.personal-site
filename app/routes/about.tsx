@@ -1,4 +1,7 @@
-import { Header, Socials } from "./_index";
+import { Header } from "./_index";
+
+import { Socials } from "../components/socials"
+
 
 export default function About() {
     return (
