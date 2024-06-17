@@ -3,7 +3,7 @@ import { Header, Socials } from "./_index";
 export default function About() {
     return (
         <div>
-        <Header />
+        <Header selected="about"/>
         <div className = "p-5">
 
             <h2> About </h2>

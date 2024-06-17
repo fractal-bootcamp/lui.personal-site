@@ -21,7 +21,7 @@ const DevNotesBadge = ({ title, targetUrl, avatarUrl }: DevNotesBadgeProps) => {
 export default function DevNotes() {
     return (
         <div>
-        <Header />
+        <Header selected="devnotes"/>
         <div className="mx-5 mt-10">
             Rough notes, all in Google Docs for now:
         </div>

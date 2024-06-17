@@ -32,7 +32,7 @@ const ProjectPost = ( props : any ) => {
 export default function Projects() {
     return (
         <div>
-        <Header />
+        <Header selected="projects"/>
         <div className = "p-5">
             <h2>Projects</h2>
             <p>

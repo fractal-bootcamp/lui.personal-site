@@ -24,7 +24,7 @@ const GameBadge = ({ title, targetUrl, avatarUrl }: GameBadgeProps) => {
 export default function Games() {
     return (
         <div>
-        <Header />
+        <Header selected="games"/>
         <div className="mx-5 mt-10">
             Games I made:
         </div>

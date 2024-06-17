@@ -7,14 +7,15 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-function HeaderButton({ target, title, importance = "secondary" }: any ){
-  let buttonClass = ""
-  if(importance === "primary") {
-    buttonClass = "bg-red-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded"
-  }
-  else if(importance === "secondary") {
-    buttonClass = "bg-blue-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded"
-  }
+function HeaderButton({ target, title, selected = "" }: any ){
+  const conditionalStyles = (target === selected) ? "bg-emerald-200 text-emerald-900" : "bg-emerald-500 text-white"
+  
+  const buttonClass = `${conditionalStyles} 
+    hover:bg-yellow-500 
+    py-2 
+    px-4 
+    m-1 
+    rounded`
   return(
     <a href={"/" + target}>
       <button className={buttonClass}>
@@ -24,19 +25,18 @@ function HeaderButton({ target, title, importance = "secondary" }: any ){
   )
 }
 
-export function Header() {
+export function Header({ selected = "" }:{selected: string}) {
   return(
     <>
-  <br />
-  <div className="flex space-x-4 px-5">
-  <HeaderButton target="./" title="homepage" importance="primary" />
-  <HeaderButton target="about" title="about" />
-  <HeaderButton target="projects" title="projects" />
-  <HeaderButton target="games" title="games" />
-  <HeaderButton target="words" title="words" />
-  <HeaderButton target="devnotes" title="dev notes" />
-  </div>
-  </>
+      <div className="flex flex-row p-1 justify-center">
+      <HeaderButton target="./" title="🏠" selected={selected} />
+      <HeaderButton target="about" title="about" selected={selected}/>
+      <HeaderButton target="projects" title="projects" selected={selected}/>
+      <HeaderButton target="games" title="games" selected={selected}/>
+      <HeaderButton target="words" title="words" selected={selected}/>
+      <HeaderButton target="devnotes" title="dev notes" selected={selected}/>
+      </div>
+    </>
   )
   
 }
@@ -70,7 +70,7 @@ export function Socials() {
 export default function Index() {
   return (
     <>
-      <Header />
+      <Header selected="./"/>
       <div className = "p-5">
 
         <p>
