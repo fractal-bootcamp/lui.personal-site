@@ -5,12 +5,12 @@ export interface BadgeProps{
     title: string;
     targetUrl: string;
     avatarUrl: string;
-    newWindow?: boolean;
+    sameWindow?: boolean;
 }
 
 
-export const Badge = ({ title, targetUrl, avatarUrl, newWindow }: BadgeProps) => {
-    const targetWindow = newWindow ? "_blank" : "_self"
+export const Badge = ({ title, targetUrl, avatarUrl, sameWindow }: BadgeProps) => {
+    const targetWindow = sameWindow ? "_self" : "_blank"
     return (
         <motion.div
             className="flex justify-center items-center bg-blue-100 m-5 p-5 rounded-lg w-[180px] text-center    

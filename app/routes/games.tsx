@@ -17,7 +17,7 @@ export default function Games() {
                 title = "Tic Tac Toe"
                 targetUrl = "/xo"
                 avatarUrl = "./images/owl-0.png"
-                newWindow = {false}
+                sameWindow = {true}
             />
             <Badge
                 title = "Game 2"
