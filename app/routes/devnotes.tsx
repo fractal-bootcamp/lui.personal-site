@@ -31,6 +31,22 @@ export default function DevNotes() {
                 avatarUrl = "./images/owl-1.png"
             />
         </div>
+        <div className="mx-5 mt-10">
+            Things I didn't make but I find extremely useful:
+        </div>
+        <div className="flex flex-row">
+            <Badge
+                title = "Tailwind Colors"
+                targetUrl = "https://tailwindcss.com/docs/customizing-colors"
+                avatarUrl = "./images/palette-2.png"
+            />
+            <Badge
+                title = "Tailwind Tags"
+                targetUrl = "https://nerdcave.com/tailwind-cheat-sheet"
+                avatarUrl = "./images/tailwind-cheatsheet.png"
+            />
+        </div>
+
         <Socials />
         </div>
     );
