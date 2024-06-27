@@ -14,7 +14,7 @@ export default function About() {
 
                 <div className="flex flex-row">
                     <div className="flex flex-col align-top p-5">
-                        <img src="./images/avatar.png" width="1000" className="rounded-lg" />
+                        <img src="./images/avatar.png" width="300" className="rounded-lg" />
                     </div>
                     <div className="flex flex-col align-top p-5">
 
@@ -92,7 +92,7 @@ export default function About() {
                     />
                 </div>
                 <div className={textRowClass}>
-                    These are former obsessions of mine. Saying goodby to old obsessions is difficult but healthy. Some of them may resurface anew but even if they don't, they've been part of the journey.
+                    These are former obsessions of mine. Saying goodbye to old obsessions is difficult but healthy. Some of them may resurface anew but even if they don't, they've been part of the journey.
                 </div>
                 <div className={badgeRowClass}>
                     <Badge
