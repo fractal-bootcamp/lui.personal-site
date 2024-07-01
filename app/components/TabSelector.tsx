@@ -11,7 +11,7 @@ const TabSelector: React.FC<TabSelectorProps> = ({ tabs, onSelect, selectedTab }
         <div className="flex flex-row mb-4">
             {tabs.map((tab, index) => (
                 <button
-                    key={index}
+                    key={tab.path}
                     className={`px-4 py-2 m-1 ${selectedTab === tab.path ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'} rounded`}
                     onClick={() => onSelect(tab.path)}
                 >
