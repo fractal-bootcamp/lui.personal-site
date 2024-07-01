@@ -4,7 +4,7 @@ import { Socials } from "../components/socials"
 
 
 import { Badge } from "../components/badge";
-import { DisplayMarkdown } from "~/components/markdown";
+import { DisplayMarkdown } from "~/components/MarkdownSelector";
 
 
 
@@ -13,7 +13,12 @@ export default function DevNotes() {
         <div>
             <Header selected="devnotes" />
             <div className="mx-5 mt-10">
-                Rough notes, all in Google Docs for now:
+                Some quick reference notes:
+            </div>
+            <DisplayMarkdown />
+
+            <div className="mx-5 mt-10">
+                Longer notes, all in Google Docs for now:
             </div>
             <div className="flex flex-row">
                 <Badge
@@ -48,7 +53,6 @@ export default function DevNotes() {
                 />
             </div>
 
-            <DisplayMarkdown />
 
             <Socials />
         </div>

@@ -7,7 +7,7 @@
 - subtract
 * multiply
 / divide
-// floor division (round down)
+// floor division (round down) - not directly available in Typescript, but can be mimicked with Math.floor(a / b )
 % remainder
 ++ increment
 -- decrement
