@@ -24,6 +24,10 @@ const MarkdownDocs: MarkdownDoc[] = [
     { title: 'Typescript', path: '/markdown/ts-patterns.md' },
 
 ];
+// CHANGE THIS - flagged by Ellipsis
+//
+// Using children prop directly is deprecated in ReactMarkdown. Use the component's children directly instead:
+//
 
 const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown }) => {
     return (
